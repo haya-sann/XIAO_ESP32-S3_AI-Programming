@@ -28,8 +28,11 @@ void setup() {
 
   // WiFiアクセスポイントを開始
   WiFi.softAP(ssid, password);
-
+  // 10秒の待ちを挿入
+  delay(10000);
   // アクセスポイントのIPアドレスを取得
+  Serial.print("Published SSID : ");
+  Serial.println(ssid);
   IPAddress IP = WiFi.softAPIP();
   Serial.print("Access Point IP address: ");
   Serial.println(IP);
